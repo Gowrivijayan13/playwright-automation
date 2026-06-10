@@ -16,6 +16,8 @@ test("home page", async ({ page }) => {
 });
 test("verifying the url", async ({ page }) => {
   await page.goto("https://smiledraft-deployment-c93d.vercel.app/");
+  const pageUrl = await page.url();
+  console.log("the page url is ", pageUrl);
   await expect(page).toHaveURL(
     "https://smiledraft-deployment-c93d.vercel.app/",
   );
